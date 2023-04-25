@@ -1,2 +1,2 @@
-# package-email-logger
-A PHP package that will send logs via email (SMTP)
+# Email Logger Package
+A PHP package that will send logs via email (SMTP).
