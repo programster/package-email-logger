@@ -1,0 +1,25 @@
+{
+    "name": "programster/email-logger",
+    "description": "A logger that logs via email and is compatible with PSR-3",
+    "keywords": ["log", "logging", "email"],
+    "homepage": "https://github.com/programster/package-email-logger",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stuart Page",
+            "homepage": "https://blog.programster.org"
+        }
+    ],
+    "require": {
+        "php": ">=8.1.0",
+        "psr/log": "^3.0",
+        "programster/log": "^2.0",
+        "programster/emailers": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Programster\\EmailLogger\\": "src/",
+            "Programster\\EmailLogger\\Exceptions\\": "src/exceptions/"
+        }
+    }
+}

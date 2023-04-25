@@ -1,0 +1,24 @@
+<?php
+
+require_once(__DIR__ . '/../vendor/autoload.php');
+
+use Programster\Emailers\SecurityProtocol;
+use Programster\EmailLogger\EmailSubscriber;
+
+
+# Fill in the settings below for the test.
+define('SMTP_HOST', 'smtp.gmail.com');
+define('SMTP_USER', 'my-email@gmail.com');
+define('SMTP_PASSWORD', '');
+define('SMTP_PROTOCOL', SecurityProtocol::TLS);
+define('SMTP_FROM_EMAIL', "my-email@gmail.com");
+define('SMTP_FROM_NAME', "My Name");
+define('SMTP_PORT', 587);
+define('SMTP_REPLY_TO_NAME', "noreply");
+define('SMTP_REPLY_TO_EMAIL', "my-email@gmail.com");
+
+
+define("EMAIL_SUBSCRIBERS", [
+    new EmailSubscriber("User 1", "someEmail@gmail.com"),
+    new EmailSubscriber("User 2", "someemail@yahoo.com"),
+]);
