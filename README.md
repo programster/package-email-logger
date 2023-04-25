@@ -9,7 +9,37 @@ composer require programster/email-logger
 ```
 
 ## Example Usage
-@todo
+```php
+# Create an emailer, in this case using PHPMailer.
+# Any emailer that implements the EmailerInterface will work
+$emailer = new Programster\Emailers\PhpMailerEmailer(
+    "smtp.gmail.com",
+    "someemail@gmail.com",
+    "app-specific-password-goes-here",
+    SecurityProtocol::TLS,
+    "someemail@gmail.com",
+    "Senders Name",
+    587,
+    "noreply@someemail.com",
+    "noreply"
+);
+
+# Create the email logger
+$logger = new EmailLogger(
+    $emailer,
+    "my-service-name-here",
+    new EmailSubscriber("Jenn", "jenn@somdomain.com"),
+    new EmailSubscriber("Roy", "roy@anotherdomain.com"),
+);
+
+# Create some useful context for the log that might help debugging/resolving what went wrong...
+$context = [
+    'some' => 'details'
+];
+
+# Send the log (email)
+$logger->critical("There was a critical error!", $context);
+```
 
 
 ## Testing
