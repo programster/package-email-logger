@@ -1,5 +1,5 @@
 # Email Logger Package
-A PHP package that will send logs via email (SMTP).
+A [PSR-3](https://www.php-fig.org/psr/psr-3/) logger for PHP that sends logs via email.
 
 
 ## Installation
